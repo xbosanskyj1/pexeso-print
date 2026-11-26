@@ -3,9 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pexeso</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <h1>Pexeso print</h1>
+  <body class="font-['Space_Grotesk'] bg-gray-100">
+    <div class="controls text-center mb-5 mt-7">
+      <h2 class="">Print Pexeso – 4 × 4 cm</h2>
+
+      <div class="flex flex-col gap-2 items-center mt-4">
+        <label
+          class="text-sm font-semibold text-gray-700 cursor-pointer"
+          for="files"
+          >Images</label
+        >
+        <input
+          class="w-2/5 cursor-pointer rounded-lg border border-gray-300 bg-white text-sm text-gray-600 file:mr-4 file:cursor-pointer file:rounded-l-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2.5 file:font-medium file:text-white hover:file:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="file"
+          id="files"
+          accept="image/*"
+          multiple
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 items-center mt-4">
+        <label
+          class="text-sm font-semibold text-gray-700 cursor-pointer"
+          for="backImage"
+          >Back Image</label
+        >
+        <input
+          class="w-2/5 cursor-pointer rounded-lg border border-gray-300 bg-white text-sm text-gray-600 file:mr-4 file:cursor-pointer file:rounded-l-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2.5 file:font-medium file:text-white hover:file:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="file"
+          id="backImage"
+          accept="image/*"
+        />
+      </div>
+
+      <br />
+
+      <button
+        class="bg-blue-600 text-white cursor-pointer px-4 py-2 mb-2 rounded-md"
+        onclick="window.print()"
+      >
+        Print
+      </button>
+      <button
+        class="bg-blue-600 text-white cursor-pointer px-4 py-2 mb-2 rounded-md"
+        onclick="clearImages()"
+      >
+        Delete
+      </button>
+
+      <p id="info">The images have not been selected yet.</p>
+      <p id="backInfo">The back image has not been selected yet.</p>
+    </div>
+
+    <div class="flex flex-col items-center gap-6" id="pages"></div>
+
+    <div class="pages"></div>
+    <script src="./script.js"></script>
   </body>
 </html>
