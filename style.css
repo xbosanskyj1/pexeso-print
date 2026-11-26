@@ -1,0 +1,86 @@
+@theme {
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .controls {
+    display: none !important;
+  }
+
+  #pages {
+    display: block;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  padding: 10mm;
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(4, 45mm);
+  grid-template-rows: repeat(6, 45mm);
+  gap: 0;
+  align-content: start;
+  justify-content: center;
+  box-shadow: 0 0 5px #aaa;
+  box-sizing: border-box;
+}
+
+.image-wrapper {
+  width: 45mm;
+  height: 45mm;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper img {
+  width: 40mm;
+  height: 40mm;
+  object-fit: cover;
+  display: block;
+}
+
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 0.2mm solid black;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.page > img {
+  width: 45mm;
+  height: 45mm;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 2.5mm;
+  box-sizing: border-box;
+}
