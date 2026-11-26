@@ -71,6 +71,7 @@
   position: absolute;
   inset: 0;
   border: 0.2mm solid black;
+  border-radius: 1.5mm;
   box-sizing: border-box;
   pointer-events: none;
 }
